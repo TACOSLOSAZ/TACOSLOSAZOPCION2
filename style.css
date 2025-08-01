@@ -81,13 +81,20 @@ nav ul li a:hover {
 /* Sección Inicio */
 #inicio {
   height: 100vh;
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  background-color: #a9746e; /* tono café */
+  background-image: repeating-linear-gradient(
+  45deg,
+    #d8c3a5,
+    #d8c3a5 10px,
+    #a9746e 10px,
+    #a9746e 20px  
+ );
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  color: #3e2f1c; /* un café oscuro para el texto */
   padding: 0 2rem;
   position: relative;
   overflow: hidden;
