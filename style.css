@@ -395,10 +395,10 @@ footer {
     font-size: 22px;
   }
   .cotiza-float {
-    max-width: 140px;
-    font-size: 12px;
-    padding: 10px 14px;
-    top: 15px;
-    left: 15px;
+    max-width: 143px;
+    font-size: 15px;
+    padding: 12px 16px;
+    top: 17px;
+    left: 17px;
   }
 }
