@@ -1,211 +1,125 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TACOS LOS AZ</title>
+  <title>Tacos Los AZ | Menú</title>
+  <meta name="description" content="Tacos de barbacoa, bistec y adobada directos del corazón de Guadalajara" />
+  <meta name="keywords" content="tacos, barbacoa, bistec, adobada, comida mexicana, Guadalajara" />
+  <meta name="author" content="Tacos Los AZ" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #fff;
-      color: black;
-      text-align: center;
-      padding: 2rem 1rem;
-      position: relative;
-    }
-    header h1 {
-      font-size: 3rem;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-    header h2 {
-      font-size: 1.3rem;
-      font-style: italic;
-      margin-top: 0.5rem;
-    }
-    #cotizarBtn {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background-color: yellow;
-      color: black;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    #menu {
-      padding: 2rem;
-      background-color: #f5f5f5;
-    }
-    #menu h3 {
-      font-size: 1.5rem;
-      margin-top: 0;
-    }
-    .menu-section {
-      margin-bottom: 1.5rem;
-    }
-    .menu-section ul {
-      list-style: none;
-      padding: 0;
-    }
-    .menu-section li {
-      margin-bottom: 0.5rem;
-    }
-    #horario {
-      text-align: center;
-      font-size: 1.2rem;
-      margin: 1rem 0;
-      color: #333;
-    }
-    #contacto {
-      padding: 2rem;
-      text-align: center;
-      background-color: #eee;
-    }
-    #comentarios {
-      padding: 2rem;
-      background-color: #fafafa;
-    }
-    #comentarios ul {
-      list-style: none;
-      padding: 0;
-    }
-    #comentarios li {
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 0.5rem;
-    }
-    footer {
-      background-color: #222;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
-    }
-    .social-icons a {
-      color: white;
-      margin: 0 1rem;
-      font-size: 1.5rem;
-      text-decoration: none;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-  <h1>TACOS LOS AZ</h1>
-  <h2>"Tacos y lonches de bistec, adobada y barbacoa directo del corazón de Guadalajara"</h2>
-  <button id="cotizarBtn"><i class="fas fa-calendar"></i> Cotiza tu evento</button>
-</header>
+  <!-- Sección de Inicio -->
+  <section id="inicio">
+    <h1>Tacos Los AZ</h1>
+    <p>"Traídos directo del corazón de Guadalajara"</p>
+    <a href="#menu">Ver Menú</a>
+  </section>
 
-<section id="horario">
-  <strong>Horario:</strong> Sábados y domingos de 8:00 a.m. a 2:00 p.m.
-</section>
+  <header>
+    <h1>TACOS LOS AZ</h1>
+    <p>Tacos de barbacoa, bistec y adobada directos del corazón de Guadalajara.</p>
+    <div id="google_translate_element"></div>
+  </header>
 
-<section id="menu">
-  <h3>Menú y Precios</h3>
+  <!-- Botón cotización -->
+  <a href="https://wa.me/5213311450168?text=Hola!%20Quisiera%20realizar%20una%20cotizaci%C3%B3n%20para%20evento" target="_blank" class="cotiza-top-right" title="Realiza tu cotización para eventos aquí" aria-label="Realiza tu cotización para eventos aquí">
+    <i class="fa fa-calendar-alt"></i> Realiza tu cotización para eventos aquí
+  </a>
 
-  <div class="menu-section">
-    <h4>Tacos</h4>
-    <ul>
-      <li>Barbacoa - $19</li>
-      <li>Bistec - $24</li>
-      <li>Adobada - $22</li>
+  <!-- Sección Menú -->
+  <section id="menu">
+    <h2>Menú y Precios</h2>
+    <p class="horarios">Horario: Sábados y Domingos de 8:00 AM a 2:00 PM</p>
+
+    <h3>Tacos</h3>
+    <ul class="menu-list">
+      <li onclick="abrirInfo('TACOS_BARBACOA')">Tacos de Barbacoa <span>$19</span></li>
+      <li onclick="abrirInfo('TACOS_BISTEC')">Tacos de Bistec <span>$24</span></li>
+      <li onclick="abrirInfo('TACOS_ADOBADA')">Tacos de Adobada <span>$22</span></li>
     </ul>
-  </div>
 
-  <div class="menu-section">
-    <h4>Lonches</h4>
-    <ul>
-      <li>Bistec - $80</li>
-      <li>Barbacoa - $70</li>
-      <li>Adobada - $70</li>
+    <h3>Lonches</h3>
+    <ul class="menu-list">
+      <li onclick="abrirInfo('LONCHE_BISTEC')">Lonche de Bistec <span>$80</span></li>
+      <li onclick="abrirInfo('LONCHE_BARBACOA')">Lonche de Barbacoa <span>$70</span></li>
+      <li onclick="abrirInfo('LONCHE_ADOBADA')">Lonche de Adobada <span>$70</span></li>
     </ul>
-  </div>
 
-  <div class="menu-section">
-    <h4>Aguas Frescas</h4>
-    <ul>
-      <li>Chica (½ litro) - $25</li>
-      <li>Grande (1 litro) - $30</li>
+    <h3>Bebidas</h3>
+    <ul class="menu-list">
+      <li onclick="abrirInfo('AGUA_CHICA')">Agua fresca chica (0.5L) <span>$25</span></li>
+      <li onclick="abrirInfo('AGUA_GRANDE')">Agua fresca grande (1L) <span>$30</span></li>
+      <li onclick="abrirInfo('REF_355')">Refresco 355 ml <span>$18</span></li>
+      <li onclick="abrirInfo('REF_500')">Refresco 500 ml <span>$25</span></li>
     </ul>
+  </section>
+
+  <!-- Opiniones -->
+  <section id="opiniones">
+    <h2>Opiniones de los clientes</h2>
+    <p>¡Déjanos tu opinión en redes sociales o contáctanos!</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Tacos Los AZ</p>
+    <p>Contacto por redes sociales</p>
+  </footer>
+
+  <!-- Botones flotantes -->
+  <div class="floating-btn">
+    <a href="https://wa.me/5213311450168" target="_blank" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/tacos_los_azmx" class="instagram" target="_blank" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
   </div>
 
-  <div class="menu-section">
-    <h4>Refrescos</h4>
-    <ul>
-      <li>355 ml - $18</li>
-      <li>500 ml - $25</li>
-    </ul>
+  <!-- Modal Info -->
+  <div id="info-modal" class="info-modal" aria-hidden="true">
+    <div class="info-content">
+      <span class="close-btn" onclick="cerrarInfo()" aria-label="Cerrar">&times;</span>
+      <p id="info-text"></p>
+    </div>
   </div>
-</section>
 
-<section id="comentarios">
-  <h3>Deja tu comentario</h3>
-  <form id="formComentario">
-    <input type="text" id="nombre" placeholder="Tu nombre" required />
-    <br /><br />
-    <textarea id="mensaje" placeholder="Tu comentario" required></textarea>
-    <br /><br />
-    <button type="submit">Enviar</button>
-  </form>
-  <ul id="listaComentarios"></ul>
-</section>
-
-<section id="contacto">
-  <h3>Contacto</h3>
-  <p><strong>Ubicación:</strong> <a href="https://www.google.com/maps?q=Morelos+48,+Jardines+de+San+Francisco,+Guadalajara" target="_blank">Morelos 48, Jardines de San Francisco, 44799 Guadalajara, Jal.</a></p>
-  <p><strong>Equipo:</strong> Oscar Lomelí, Luis Araiza y Enrique Sánchez</p>
-  <div class="social-icons">
-    <a href="https://wa.me/523311450168" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.instagram.com/tacos_los_azmx" target="_blank"><i class="fab fa-instagram"></i></a>
-  </div>
-</section>
-
-<footer>
-  &copy; 2025 Tacos Los AZ
-</footer>
-
-<script>
-  // Comentarios limitados a 10
-  const form = document.getElementById("formComentario");
-  const lista = document.getElementById("listaComentarios");
-  const maxComentarios = 10;
-
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-    const nombre = document.getElementById("nombre").value.trim();
-    const mensaje = document.getElementById("mensaje").value.trim();
-    if (nombre && mensaje) {
-      const nuevo = document.createElement("li");
-      nuevo.textContent = nombre + ": " + mensaje;
-      lista.appendChild(nuevo);
-      if (lista.children.length > maxComentarios) {
-        lista.removeChild(lista.firstChild);
-      }
-      form.reset();
+  <!-- Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'es', includedLanguages: 'es,en' }, 'google_translate_element');
     }
-  });
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-  // Botón de cotización
-  document.getElementById("cotizarBtn").addEventListener("click", function() {
-    const nombre = prompt("¿Cuál es tu nombre?");
-    const telefono = prompt("¿Tu número de teléfono?");
-    const descripcion = prompt("¿Qué deseas cotizar?");
-    const personas = prompt("¿Para cuántas personas es el evento?");
-    if (nombre && telefono && descripcion && personas) {
-      const mensaje = `Hola, soy ${nombre}. Tel: ${telefono}. Quiero cotizar: ${descripcion}. Para ${personas} personas.`;
-      window.open(`https://wa.me/523311450168?text=${encodeURIComponent(mensaje)}`, "_blank");
+  <!-- Interacciones -->
+  <script>
+    function abrirInfo(tipo) {
+      const infoModal = document.getElementById('info-modal');
+      const texto = {
+        TACOS_BARBACOA: 'Taco de barbacoa exquisito. Peso: 100–140g. Calorías: 180–250 kcal.',
+        TACOS_BISTEC: 'Taco de bistec jugoso. Peso: 110–150g. Calorías: 200–270 kcal.',
+        TACOS_ADOBADA: 'Taco de adobada con piña. Peso: 100–140g. Calorías: 190–260 kcal.',
+        LONCHE_BARBACOA: 'Lonche de barbacoa. Peso: 220–270g. Calorías: 520–650 kcal.',
+        LONCHE_BISTEC: 'Lonche de bistec. Peso: 240–290g. Calorías: 540–630 kcal.',
+        LONCHE_ADOBADA: 'Lonche de adobada. Peso: 220–270g. Calorías: 520–650 kcal.',
+        AGUA_CHICA: 'Agua fresca de 0.5L (Jamaica, Horchata).',
+        AGUA_GRANDE: 'Agua fresca de 1L para compartir.',
+        REF_355: 'Refresco frío de 355 ml.',
+        REF_500: 'Refresco frío de 500 ml.'
+      };
+      document.getElementById('info-text').textContent = texto[tipo];
+      infoModal.style.display = 'flex';
+      infoModal.setAttribute('aria-hidden', 'false');
     }
-  });
-</script>
+
+    function cerrarInfo() {
+      const infoModal = document.getElementById('info-modal');
+      infoModal.style.display = 'none';
+      infoModal.setAttribute('aria-hidden', 'true');
+    }
+  </script>
 
 </body>
 </html>
