@@ -23,19 +23,76 @@ body {
   line-height: 1.6;
 }
 
-/* Sección Inicio */
+/* --- Inicio elegante con fondo degradado y textura --- */
 #inicio {
   height: 100vh;
-  background: linear-gradient(90deg, #ffe8d6, #ffb997);
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 2rem;
+  color: #f5f5f5;
   text-align: center;
-  padding: 0 1rem;
   overflow: hidden;
+  font-family: 'Inter', sans-serif;
 }
 
+/* Textura sutil overlay */
+#inicio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Texto del inicio */
+#inicio h1 {
+  position: relative;
+  font-size: 5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  z-index: 1;
+  letter-spacing: 8px;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.7);
+}
+
+#inicio p {
+  position: relative;
+  font-size: 1.8rem;
+  font-style: italic;
+  margin-bottom: 3rem;
+  z-index: 1;
+  max-width: 600px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+#inicio a {
+  position: relative;
+  background-color: var(--naranja);
+  color: #1e3c72;
+  font-weight: 700;
+  font-size: 1.4rem;
+  padding: 16px 48px;
+  border-radius: 40px;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(244,162,97,0.7);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  z-index: 1;
+  cursor: pointer;
+}
+
+#inicio a:hover {
+  background-color: #e76f51;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(231,111,81,0.9);
+}
+
+/* Animaciones fadeSlideUp para inicio */
 #inicio h1, #inicio p, #inicio a {
   opacity: 0;
   transform: translateY(30px);
@@ -43,53 +100,33 @@ body {
 }
 
 #inicio h1 {
-  font-size: 3rem;
-  color: var(--texto);
-  font-weight: 800;
-  margin-bottom: 0.5rem;
   animation: fadeSlideUp 1s ease forwards;
   animation-delay: 0.3s;
-  letter-spacing: 2px;
 }
 
 #inicio p {
-  font-size: 1.5rem;
-  font-style: italic;
-  margin-bottom: 2rem;
   animation: fadeSlideUp 1s ease forwards;
   animation-delay: 0.8s;
 }
 
 #inicio a {
-  background-color: var(--rojo);
-  color: var(--blanco);
-  padding: 15px 35px;
-  border-radius: 12px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  transition: background-color 0.3s ease;
   animation: pulse 2.5s infinite, fadeSlideUp 1s ease forwards;
   animation-delay: 1.3s, 1.3s;
-  cursor: pointer;
 }
 
-#inicio a:hover {
-  background-color: #d62828;
-}
-
-/* Animaciones */
 @keyframes fadeSlideUp {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 @keyframes pulse {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7);
+    box-shadow: 0 0 0 0 rgba(244,162,97, 0.7);
   }
   50% {
-    box-shadow: 0 0 15px 8px rgba(230, 57, 70, 0);
+    box-shadow: 0 0 15px 8px rgba(244,162,97, 0);
   }
 }
 
@@ -107,12 +144,14 @@ header h1 {
   font-weight: 800;
   border-radius: 12px;
   letter-spacing: 3px;
+  user-select: none;
 }
 
 header p {
   font-style: italic;
   margin-top: 0.5rem;
   font-size: 1.2rem;
+  user-select: none;
 }
 
 /* Traducción */
@@ -301,15 +340,43 @@ footer {
   color: var(--rojo);
 }
 
-/* Responsive */
-@media (min-width: 600px) {
+/* Opiniones centradas y estilizadas */
+#opiniones {
+  max-width: 700px;
+  margin: 4rem auto;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  color: #3a3a3a;
+  font-size: 1.3rem;
+  user-select: none;
+  padding: 0 1rem;
+}
+
+/* Mejoras para móviles */
+@media (max-width: 768px) {
+  #inicio h1 {
+    font-size: 3.2rem;
+    letter-spacing: 4px;
+  }
+  #inicio p {
+    font-size: 1.3rem;
+    max-width: 90%;
+  }
+  #inicio a {
+    font-size: 1.1rem;
+    padding: 14px 36px;
+  }
+  #opiniones {
+    font-size: 1.1rem;
+    margin: 3rem 1rem;
+  }
   .menu-list {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 768px) {
-  .cotiza-top-right {
-    display: none;
+@media (min-width: 600px) {
+  .menu-list {
+    grid-template-columns: 1fr 1fr;
   }
 }
