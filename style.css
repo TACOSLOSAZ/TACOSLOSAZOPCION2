@@ -78,18 +78,16 @@ nav ul li a:hover {
   color: var(--secondary-color);
 }
 
-/* --- Sección Inicio con fondo café/beige texturizado --- */
+/* --- Sección Inicio --- */
 #inicio {
   height: 100vh;
-  background-color: #c8b69b;
-  background-image: url('https://www.transparenttextures.com/patterns/rugged-paper.png');
-  background-repeat: repeat;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #4a3723;
+  color: white;
   padding: 0 2rem;
   position: relative;
   overflow: hidden;
@@ -100,7 +98,7 @@ nav ul li a:hover {
   font-weight: 700;
   margin-bottom: 1rem;
   letter-spacing: 5px;
-  text-shadow: 0 3px 10px rgba(74,55,35,0.6);
+  text-shadow: 0 3px 10px rgba(0,0,0,0.6);
   opacity: 0;
   transform: translateY(40px);
   animation: fadeInUp 1s ease forwards;
@@ -241,33 +239,6 @@ footer {
   z-index: 1500;
 }
 
-/* Cotiza eventos flotante arriba WhatsApp/IG */
-.cotiza-float {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-  width: auto;
-  padding: 14px 22px;
-  border-radius: 30px;
-  font-weight: 700;
-  font-size: 14px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  user-select: none;
-  transition: background-color 0.3s ease;
-  text-decoration: none;
-}
-
-.cotiza-float:hover {
-  background-color: #e18f4f;
-}
-
-.cotiza-float i {
-  font-size: 18px;
-}
-
 .floating-btn a {
   background-color: #25d366;
   color: white;
@@ -288,6 +259,45 @@ footer {
 
 .floating-btn a:hover {
   background-color: #128c7e;
+}
+
+/* Botón flotante Cotiza eventos */
+.cotiza-float {
+  position: fixed;
+  bottom: 100px; /* arriba de los otros botones flotantes */
+  right: 25px;
+  background-color: #d4af37; /* Dorado */
+  color: #111; /* Negro oscuro para texto */
+  width: auto;
+  padding: 12px 18px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow:
+    0 0 6px #bfa233,
+    inset 0 0 5px #00000080; /* Adorno negro interno */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  max-width: 180px; /* Para que no se salga */
+  white-space: nowrap; /* Para que el texto no haga salto */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 1600;
+}
+
+.cotiza-float:hover {
+  background-color: #c49e2a; /* Dorado más oscuro al pasar */
+}
+
+.cotiza-float i {
+  font-size: 18px;
+  color: #111; /* Icono negro */
+  flex-shrink: 0;
 }
 
 /* Modal */
@@ -378,7 +388,10 @@ footer {
     font-size: 22px;
   }
   .cotiza-float {
+    max-width: 140px;
     font-size: 12px;
-    padding: 10px 18px;
+    padding: 10px 14px;
+    bottom: 90px;
+    right: 15px;
   }
 }
