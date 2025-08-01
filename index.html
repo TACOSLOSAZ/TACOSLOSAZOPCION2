@@ -32,12 +32,8 @@
   </section>
 
   <!-- Botón flotante Cotiza eventos arriba izquierda -->
-  <a href="https://wa.me/5213311450168?text=Hola!%20Quisiera%20realizar%20una%20cotizaci%C3%B3n%20para%20evento"
-     target="_blank"
-     class="cotiza-float"
-     aria-label="Cotiza eventos aquí"
-     title="Cotiza eventos aquí">
-     <i class="fa fa-calendar-alt" aria-hidden="true"></i> Cotiza eventos aquí
+  <a href="https://wa.me/5213311450168?text=Hola!%20Quisiera%20realizar%20una%20cotizaci%C3%B3n%20para%20evento" target="_blank" class="cotiza-float" aria-label="Cotiza eventos aquí">
+    <i class="fa fa-calendar-alt" aria-hidden="true"></i> Cotiza eventos aquí
   </a>
 
   <!-- Menú -->
@@ -78,88 +74,90 @@
     <!-- Contacto -->
     <section id="contacto" role="region" aria-labelledby="contacto-title">
       <h2 id="contacto-title" class="section-title">Contacto</h2>
-      <p>¿Tienes dudas o quieres hacer una cotización? Contáctanos:</p>
-      <ul>
-        <li>Oscar Lomelí</li>
-        <li>Luis Araiza</li>
-        <li>Enrique Sánchez</li>
-      </ul>
-      <p>WhatsApp: <a href="https://wa.me/5213311450168" target="_blank" rel="noopener noreferrer">+52 33 1145 0168</a></p>
-      <p>Instagram: <a href="https://www.instagram.com/tacos_los_azmx" target="_blank" rel="noopener noreferrer">@tacos_los_azmx</a></p>
+      <p>Oscar Lomelí, Luis Araiza y Enrique Sánchez</p>
+      <p>Teléfono: <a href="tel:+523311450168">3311450168</a></p>
+      <p>Síguenos en:
+        <a href="https://www.instagram.com/tacos_los_azmx" target="_blank" rel="noopener" aria-label="Instagram Tacos Los AZ">
+          <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
+        </a>
+      </p>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer role="contentinfo">
-    <p>© 2025 Tacos Los AZ</p>
-  </footer>
-
-  <!-- Botones flotantes WhatsApp e Instagram abajo derecha -->
-  <div class="floating-btn" aria-label="Botones de contacto rápido">
-    <a href="https://wa.me/5213311450168" target="_blank" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.instagram.com/tacos_los_azmx" class="instagram" target="_blank" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-  </div>
-
-  <!-- Modal info -->
-  <div id="info-modal" class="info-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="info-text">
+  <!-- Modal info alimentos -->
+  <div id="infoModal" class="info-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
     <div class="info-content">
-      <button class="close-btn" onclick="cerrarInfo()" aria-label="Cerrar ventana">&times;</button>
-      <p id="info-text"></p>
+      <button class="close-btn" aria-label="Cerrar modal" onclick="cerrarInfo()">&times;</button>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
     </div>
   </div>
 
   <script>
-    // Texto de información para cada item
-    const infoTexts = {
-      TACOS_BARBACOA: 'Taco de barbacoa exquisito, preparado con receta tradicional jalisciense. Peso total aproximado: 100–140 gramos por taco de barbacoa y 180–250 kcal.',
-      TACOS_BISTEC: 'Taco de bistec jugoso con cebollita y salsa al gusto. Peso total aproximado: 110–150 gramos por taco de bistec y 200–270 kcal.',
-      TACOS_ADOBADA: 'Taco de adobada con piña y especias mexicanas. Peso total aproximado: 100–140 gramos por taco de adobada y 190–260 kcal.',
-      LONCHE_BARBACOA: 'Lonche de barbacoa que se deshace en tu boca. Total aproximado: 220–270 gramos por lonche de barbacoa y 520–650 kcal.',
-      LONCHE_BISTEC: 'Lonche de bistec con pan suave y carne bien sazonada. Total aproximado: 240–290 gramos por lonche de bistec y 540–630 kcal.',
-      LONCHE_ADOBADA: 'Lonche de adobada con el toque perfecto de picante. Total aproximado: 220–270 gramos por lonche de adobada y 520–650 kcal.',
-      AGUA_CHICA: 'Agua fresca de sabores naturales en presentación de medio litro.',
-      AGUA_GRANDE: 'Agua fresca de sabores naturales grande ideal para compartir.',
-      REF_355: 'Refresco frío de 355 ml para acompañar tu comida.',
-      REF_500: 'Refresco frío de 500 ml para acompañar tu comida.'
+    const infoData = {
+      'TACOS_BARBACOA': {
+        title: 'Tacos de Barbacoa',
+        desc: 'Peso total aproximado: 100–140 gramos por taco de barbacoa con doble tortilla, sin cilantro, cebolla ni salsa. Calorías aproximadas: 180–250 kcal.'
+      },
+      'TACOS_BISTEC': {
+        title: 'Tacos de Bistec',
+        desc: 'Peso total aproximado: 110–150 gramos por taco de bistec con doble tortilla, sin cilantro, cebolla ni salsa. Calorías aproximadas: 200–270 kcal.'
+      },
+      'TACOS_ADOBADA': {
+        title: 'Tacos de Adobada',
+        desc: 'Peso total aproximado: 100–140 gramos por taco de adobada con doble tortilla, sin cilantro, cebolla ni salsa. Calorías aproximadas: 190–260 kcal.'
+      },
+      'LONCHE_BARBACOA': {
+        title: 'Lonche de Barbacoa',
+        desc: 'Peso total aproximado: 220–270 gramos por lonche de barbacoa con birote estándar.'
+      },
+      'LONCHE_BISTEC': {
+        title: 'Lonche de Bistec',
+        desc: 'Peso total aproximado: 220–270 gramos por lonche de bistec con birote estándar.'
+      },
+      'LONCHE_ADOBADA': {
+        title: 'Lonche de Adobada',
+        desc: 'Peso total aproximado: 220–270 gramos por lonche de adobada con birote estándar.'
+      },
+      'AGUA_CHICA': {
+        title: 'Agua fresca chica',
+        desc: 'Agua fresca de 0.5 litros por $25.'
+      },
+      'AGUA_GRANDE': {
+        title: 'Agua fresca grande',
+        desc: 'Agua fresca de 1 litro por $30.'
+      },
+      'REF_355': {
+        title: 'Refresco 355 ml',
+        desc: 'Refresco de 355 ml por $18.'
+      },
+      'REF_500': {
+        title: 'Refresco 500 ml',
+        desc: 'Refresco de 500 ml por $25.'
+      }
     };
 
-    // Función para abrir modal con info
-    function abrirInfo(tipo) {
-      const modal = document.getElementById('info-modal');
-      const textoElemento = document.getElementById('info-text');
-      textoElemento.textContent = infoTexts[tipo] || 'Información no disponible.';
-      modal.style.display = 'flex';
-      modal.setAttribute('aria-hidden', 'false');
-      // Focus en modal para accesibilidad
-      modal.querySelector('.close-btn').focus();
+    function abrirInfo(key) {
+      const modal = document.getElementById('infoModal');
+      const title = document.getElementById('modalTitle');
+      const desc = document.getElementById('modalDesc');
+      if (infoData[key]) {
+        title.textContent = infoData[key].title;
+        desc.textContent = infoData[key].desc;
+        modal.style.display = 'flex';
+      }
     }
 
-    // Cerrar modal
     function cerrarInfo() {
-      const modal = document.getElementById('info-modal');
-      modal.style.display = 'none';
-      modal.setAttribute('aria-hidden', 'true');
+      document.getElementById('infoModal').style.display = 'none';
     }
 
-    // Soporte para abrir con Enter o Space (accesibilidad)
-    document.querySelectorAll('.menu-list li').forEach(item => {
-      item.addEventListener('keydown', e => {
-        if(e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          item.click();
-        }
-      });
-    });
-
-    // Navegación activa (highlight menú)
-    const links = document.querySelectorAll('nav ul li a');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        links.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      });
+    // Accesibilidad: cerrar modal con tecla ESC
+    window.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        cerrarInfo();
+      }
     });
   </script>
-
 </body>
 </html>
