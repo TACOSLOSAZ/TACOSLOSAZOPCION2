@@ -3,50 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tacos Los AZ | Menú</title>
-  <meta name="description" content="Tacos de barbacoa, bistec y adobada directos del corazón de Guadalajara" />
+  <title>Tacos Los AZ - Sabor Tradicional</title>
+  <meta name="description" content="Disfruta los mejores tacos de barbacoa, bistec y adobada con sabor auténtico." />
   <meta name="keywords" content="tacos, barbacoa, bistec, adobada, comida mexicana, Guadalajara" />
   <meta name="author" content="Tacos Los AZ" />
-  <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="Tacos Los AZ - Sabor Tradicional de Guadalajara" />
-  <meta property="og:description" content="Disfruta los mejores tacos de barbacoa, bistec y adobada con sabor auténtico." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tacoslosaz.github.io/TACOSLOSAZOPCION2/" />
-  <meta property="og:image" content="URL_DE_UNA_IMAGEN_DE_TUS_TACOS_AQUÍ" />
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Tacos Los AZ - Sabor Tradicional de Guadalajara" />
-  <meta name="twitter:description" content="Disfruta los mejores tacos de barbacoa, bistec y adobada con sabor auténtico." />
-  <meta name="twitter:image" content="URL_DE_UNA_IMAGEN_DE_TUS_TACOS_AQUÍ" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- Navbar -->
+  <nav role="navigation" aria-label="Menú principal">
+    <div class="logo" tabindex="0">TACOS LOS AZ</div>
+    <ul>
+      <li><a href="#inicio" class="active">Inicio</a></li>
+      <li><a href="#menu">Menú</a></li>
+      <li><a href="#opiniones">Opiniones</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
   <!-- Inicio -->
-  <header id="inicio" role="banner">
+  <section id="inicio" role="banner">
     <h1>Tacos Los AZ</h1>
     <p>"Traídos directo del corazón de Guadalajara"</p>
-    <a href="#menu">Ver Menú</a>
-  </header>
-
-  <!-- Header principal -->
-  <header role="heading" aria-level="1" style="background-color: #e63946; color: white; text-align:center; padding: 1.5rem;">
-    <h1>TACOS LOS AZ</h1>
-    <p>Tacos de barbacoa, bistec y adobada directos del corazón de Guadalajara.</p>
-    <div id="google_translate_element"></div>
-  </header>
+    <a href="#menu" class="btn-primary" aria-label="Ver menú">Ver Menú</a>
+  </section>
 
   <!-- Botón cotización -->
-  <a href="https://wa.me/5213311450168?text=Hola!%20Quisiera%20realizar%20una%20cotizaci%C3%B3n%20para%20evento" target="_blank" class="cotiza-top-right" title="Realiza tu cotización para eventos aquí" aria-label="Realiza tu cotización para eventos aquí">
+  <a href="https://wa.me/5213311450168?text=Hola!%20Quisiera%20realizar%20una%20cotizaci%C3%B3n%20para%20evento" target="_blank" class="cotiza-top-right" aria-label="Realiza tu cotización para eventos aquí">
     <i class="fa fa-calendar-alt"></i> Realiza tu cotización para eventos aquí
   </a>
 
   <!-- Menú -->
   <main>
     <section id="menu" role="region" aria-labelledby="menu-title">
-      <h2 id="menu-title">Menú y Precios</h2>
+      <h2 id="menu-title" class="section-title">Menú y Precios</h2>
       <p class="horarios">Horario: Sábados y Domingos de 8:00 AM a 2:00 PM</p>
 
       <h3>Tacos</h3>
@@ -74,15 +67,27 @@
 
     <!-- Opiniones -->
     <section id="opiniones" role="region" aria-label="Opiniones de clientes">
-      <h2>Opiniones de los clientes</h2>
+      <h2 class="section-title">Opiniones de los clientes</h2>
       <p>¡Déjanos tu opinión en redes sociales o contáctanos!</p>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" role="region" aria-labelledby="contacto-title">
+      <h2 id="contacto-title" class="section-title">Contacto</h2>
+      <p>¿Tienes dudas o quieres hacer una cotización? Contáctanos:</p>
+      <ul>
+        <li>Oscar Lomelí</li>
+        <li>Luis Araiza</li>
+        <li>Enrique Sánchez</li>
+      </ul>
+      <p>WhatsApp: <a href="https://wa.me/5213311450168" target="_blank" rel="noopener noreferrer">+52 33 1145 0168</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/tacos_los_azmx" target="_blank" rel="noopener noreferrer">@tacos_los_azmx</a></p>
     </section>
   </main>
 
   <!-- Footer -->
   <footer role="contentinfo">
     <p>© 2025 Tacos Los AZ</p>
-    <p>Contacto por redes sociales</p>
   </footer>
 
   <!-- Botones flotantes -->
@@ -142,7 +147,15 @@
         }
       });
     });
-  </script>
 
+    // Navegación activa (highlight menú)
+    const links = document.querySelectorAll('nav ul li a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
