@@ -263,8 +263,7 @@ footer {
 
 /* Botón flotante Cotiza eventos arriba izquierda */
 .cotiza-float {
-  position: fixed;
-  top: 20px;
+  top: 60px; /*mas abajo para no tapar */
   left: 20px;
   background-color: #d4af37; /* Dorado */
   color: #111; /* Negro */
