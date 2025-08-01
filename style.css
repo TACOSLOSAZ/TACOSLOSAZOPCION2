@@ -83,12 +83,12 @@ nav ul li a:hover {
   height: 100vh;
   background-color: #a9746e; /* tono café */
   background-image: repeating-linear-gradient(
-  45deg,
+    45deg,
     #d8c3a5,
     #d8c3a5 10px,
     #a9746e 10px,
     #a9746e 20px  
- );
+  );
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -270,7 +270,8 @@ footer {
 
 /* Botón flotante Cotiza eventos arriba izquierda */
 .cotiza-float {
-  top: 60px; /*mas abajo para no tapar */
+  position: fixed;
+  top: 60px; /* más abajo para no tapar */
   left: 20px;
   background-color: #d4af37; /* Dorado */
   color: #111; /* Negro */
