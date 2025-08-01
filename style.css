@@ -1,175 +1,387 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tacos Los AZ - Sabor Tradicional</title>
-  <meta name="description" content="Disfruta los mejores tacos de barbacoa, bistec y adobada con sabor auténtico." />
-  <meta name="keywords" content="tacos, barbacoa, bistec, adobada, comida mexicana, Guadalajara" />
-  <meta name="author" content="Tacos Los AZ" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-  <!-- Navbar -->
-  <nav role="navigation" aria-label="Menú principal">
-    <div class="logo" tabindex="0">TACOS LOS AZ</div>
-    <ul>
-      <li><a href="#inicio" class="active">Inicio</a></li>
-      <li><a href="#menu">Menú</a></li>
-      <li><a href="#opiniones">Opiniones</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
+:root {
+  --primary-color: #e63946;
+  --secondary-color: #f4a261;
+  --background-light: #fff8f0;
+  --text-dark: #222222;
+  --shadow-color: rgba(0,0,0,0.1);
+}
 
-  <!-- Inicio -->
-  <section id="inicio" role="banner">
-    <h1>Tacos Los AZ</h1>
-    <p>"Traídos directo del corazón de Guadalajara"</p>
-    <a href="#menu" class="btn-primary" aria-label="Ver menú">Ver Menú</a>
-  </section>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  <!-- Botón flotante Cotiza eventos arriba izquierda -->
-  <a href="https://wa.me/5213311450168?text=Hola!%20Quisiera%20realizar%20una%20cotizaci%C3%B3n%20para%20evento" 
-     target="_blank" 
-     class="cotiza-float bounce" 
-     aria-label="Cotiza eventos aquí">
-    <i class="fa fa-calendar-alt" aria-hidden="true"></i> Cotiza aquí
-  </a>
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
-  <!-- Sección Menú -->
-  <main>
-    <section id="menu" role="region" aria-labelledby="menu-title">
-      <h2 id="menu-title" class="section-title">Menú y Precios</h2>
-      <p class="horarios">Horario: Sábados y Domingos de 8:00 AM a 2:00 PM</p>
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  z-index: 1000;
+}
 
-      <h3>Tacos</h3>
-      <ul class="menu-list">
-        <li onclick="abrirInfo('TACOS_BARBACOA')" tabindex="0" role="button">Tacos de Barbacoa <span>$19</span></li>
-        <li onclick="abrirInfo('TACOS_BISTEC')" tabindex="0" role="button">Tacos de Bistec <span>$24</span></li>
-        <li onclick="abrirInfo('TACOS_ADOBADA')" tabindex="0" role="button">Tacos de Adobada <span>$22</span></li>
-      </ul>
+nav .logo {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: white;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
 
-      <h3>Lonches</h3>
-      <ul class="menu-list">
-        <li onclick="abrirInfo('LONCHE_BISTEC')" tabindex="0" role="button">Lonche de Bistec <span>$80</span></li>
-        <li onclick="abrirInfo('LONCHE_BARBACOA')" tabindex="0" role="button">Lonche de Barbacoa <span>$70</span></li>
-        <li onclick="abrirInfo('LONCHE_ADOBADA')" tabindex="0" role="button">Lonche de Adobada <span>$70</span></li>
-      </ul>
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
 
-      <h3>Bebidas</h3>
-      <ul class="menu-list">
-        <li onclick="abrirInfo('AGUA_CHICA')" tabindex="0" role="button">Agua fresca chica (0.5L) <span>$25</span></li>
-        <li onclick="abrirInfo('AGUA_GRANDE')" tabindex="0" role="button">Agua fresca grande (1L) <span>$30</span></li>
-        <li onclick="abrirInfo('REF_355')" tabindex="0" role="button">Refresco 355 ml <span>$18</span></li>
-        <li onclick="abrirInfo('REF_500')" tabindex="0" role="button">Refresco 500 ml <span>$25</span></li>
-      </ul>
-    </section>
+nav ul li a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
 
-    <!-- Opiniones -->
-    <section id="opiniones" role="region" aria-label="Opiniones de clientes">
-      <h2 class="section-title">Opiniones de los clientes</h2>
-      <p>¡Déjanos tu opinión en redes sociales o contáctanos!</p>
-    </section>
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--secondary-color);
+  transition: width 0.3s;
+}
 
-    <!-- Contacto -->
-    <section id="contacto" role="region" aria-labelledby="contacto-title">
-      <h2 id="contacto-title" class="section-title">Contacto</h2>
-      <p>Oscar Lomelí</p>
-      <p>Teléfono: <a href="tel:+523311450168">3311450168</a></p>
-      <p>Síguenos en:
-        <a href="https://www.instagram.com/tacos_los_azmx" target="_blank" rel="noopener" aria-label="Instagram Tacos Los AZ">
-          <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
-        </a>
-      </p>
-    </section>
-  </main>
+nav ul li a:hover::after,
+nav ul li a.active::after {
+  width: 100%;
+}
 
-  <!-- Modal info alimentos -->
-  <div id="infoModal" class="info-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
-    <div class="info-content">
-      <button class="close-btn" aria-label="Cerrar modal" onclick="cerrarInfo()">&times;</button>
-      <h3 id="modalTitle"></h3>
-      <p id="modalDesc"></p>
-    </div>
-  </div>
+nav ul li a:hover {
+  color: var(--secondary-color);
+}
 
-  <!-- Botones flotantes de WhatsApp e Instagram -->
-  <div class="floating-btn">
-    <a href="https://wa.me/5213311450168" target="_blank" aria-label="WhatsApp Tacos Los AZ" class="float bounce">
-      <i class="fab fa-whatsapp" aria-hidden="true"></i>
-    </a>
-    <a href="https://www.instagram.com/tacos_los_azmx" target="_blank" class="instagram float bounce" aria-label="Instagram Tacos Los AZ">
-      <i class="fab fa-instagram" aria-hidden="true"></i>
-    </a>
-  </div>
+#inicio {
+  height: 100vh;
+  background-color: #a9746e;
+  background-image: repeating-linear-gradient(45deg, #d8c3a5, #d8c3a5 10px, #a9746e 10px, #a9746e 20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #3e2f1c;
+  padding: 0 2rem;
+  position: relative;
+  overflow: hidden;
+}
 
-  <script>
-    const infoData = {
-      'TACOS_BARBACOA': {
-        title: 'Tacos de Barbacoa',
-        desc: 'Peso total aproximado: 100–140 gramos por taco de barbacoa con doble tortilla, sin cilantro, cebolla ni salsa. Calorías aproximadas: 180–250 kcal.'
-      },
-      'TACOS_BISTEC': {
-        title: 'Tacos de Bistec',
-        desc: 'Peso total aproximado: 110–150 gramos por taco de bistec con doble tortilla, sin cilantro, cebolla ni salsa. Calorías aproximadas: 200–270 kcal.'
-      },
-      'TACOS_ADOBADA': {
-        title: 'Tacos de Adobada',
-        desc: 'Peso total aproximado: 100–140 gramos por taco de adobada con doble tortilla, sin cilantro, cebolla ni salsa. Calorías aproximadas: 190–260 kcal.'
-      },
-      'LONCHE_BARBACOA': {
-        title: 'Lonche de Barbacoa',
-        desc: 'Peso total aproximado: 220–270 gramos por lonche de barbacoa con birote estándar.'
-      },
-      'LONCHE_BISTEC': {
-        title: 'Lonche de Bistec',
-        desc: 'Peso total aproximado: 220–270 gramos por lonche de bistec con birote estándar.'
-      },
-      'LONCHE_ADOBADA': {
-        title: 'Lonche de Adobada',
-        desc: 'Peso total aproximado: 220–270 gramos por lonche de adobada con birote estándar.'
-      },
-      'AGUA_CHICA': {
-        title: 'Agua fresca chica',
-        desc: 'Agua fresca de 0.5 litros por $25.'
-      },
-      'AGUA_GRANDE': {
-        title: 'Agua fresca grande',
-        desc: 'Agua fresca de 1 litro por $30.'
-      },
-      'REF_355': {
-        title: 'Refresco 355 ml',
-        desc: 'Refresco de 355 ml por $18.'
-      },
-      'REF_500': {
-        title: 'Refresco 500 ml',
-        desc: 'Refresco de 500 ml por $25.'
-      }
-    };
+#inicio h1 {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 5px;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
 
-    function abrirInfo(key) {
-      const modal = document.getElementById('infoModal');
-      const title = document.getElementById('modalTitle');
-      const desc = document.getElementById('modalDesc');
-      if (infoData[key]) {
-        title.textContent = infoData[key].title;
-        desc.textContent = infoData[key].desc;
-        modal.style.display = 'flex';
-      }
-    }
+#inicio p {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.8s;
+}
 
-    function cerrarInfo() {
-      document.getElementById('infoModal').style.display = 'none';
-    }
+#inicio a.btn-primary {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 16px 50px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(244,162,97,0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 1.3s;
+  cursor: pointer;
+}
 
-    window.addEventListener('keydown', e => {
-      if (e.key === 'Escape') {
-        cerrarInfo();
-      }
-    });
-  </script>
-</body>
-</html>
+#inicio a.btn-primary:hover {
+  background-color: #e76f51;
+  box-shadow: 0 12px 30px rgba(231,111,81,0.7);
+}
+
+section {
+  max-width: 1000px;
+  margin: 6rem auto 3rem;
+  padding: 0 2rem;
+}
+
+h2.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  border-bottom: 4px solid var(--secondary-color);
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+h3 {
+  font-size: 1.75rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.menu-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 1.5rem;
+  padding: 0;
+}
+
+.menu-list li {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 18px var(--shadow-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  border: 2px solid transparent;
+  position: relative;
+}
+
+.menu-list li:hover,
+.menu-list li:focus {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(230,57,70,0.3);
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.menu-list li span {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.horarios {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+#opiniones {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #444;
+  font-size: 1.3rem;
+  user-select: none;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  margin-top: 4rem;
+}
+
+/* Botones flotantes */
+.floating-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1500;
+}
+
+.floating-btn a {
+  background-color: #25d366;
+  color: white;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+}
+
+.floating-btn a.instagram {
+  background-color: #e1306c;
+}
+
+.floating-btn a:hover {
+  background-color: #128c7e;
+}
+
+/* Botón flotante Cotiza eventos */
+.cotiza-float {
+  position: fixed;
+  top: 60px;
+  left: 20px;
+  background-color: #d4af37;
+  color: #111;
+  width: auto;
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 0 6px #bfa233, inset 0 0 5px #00000080;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 1600;
+}
+
+.cotiza-float:hover {
+  background-color: #c49e2a;
+}
+
+.cotiza-float i {
+  font-size: 18px;
+  color: #111;
+  flex-shrink: 0;
+}
+
+.info-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.info-content {
+  background: white;
+  padding: 2.5rem 3rem;
+  border-radius: 20px;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+  position: relative;
+  font-size: 1.15rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2.2rem;
+  cursor: pointer;
+  color: var(--primary-color);
+  background: transparent;
+  border: none;
+  user-select: none;
+}
+
+.close-btn:hover {
+  color: var(--secondary-color);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem;
+  }
+  nav ul {
+    gap: 1rem;
+  }
+  #inicio h1 {
+    font-size: 3rem;
+  }
+  #inicio p {
+    font-size: 1.2rem;
+  }
+  #inicio a.btn-primary {
+    padding: 14px 40px;
+    font-size: 1.1rem;
+  }
+  section {
+    margin: 5rem 1rem 2rem;
+    padding: 0 1rem;
+  }
+  .menu-list {
+    grid-template-columns: 1fr !important;
+  }
+  .floating-btn {
+    bottom: 15px;
+    right: 15px;
+  }
+  .floating-btn a {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+  }
+  .cotiza-float {
+    max-width: 143px;
+    font-size: 11px;
+    padding: 10px 14px;
+    top: 17px;
+    left: 17px;
+  }
+}
