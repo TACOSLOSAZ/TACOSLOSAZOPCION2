@@ -31,14 +31,14 @@
     <a href="#menu" class="btn-primary" aria-label="Ver menú">Ver Menú</a>
   </section>
 
-  <!-- Botones flotantes -->
-  <div class="floating-btn" aria-label="Botones de contacto rápido" role="region">
-    <a href="https://wa.me/5213311450168?text=Hola!%20Quisiera%20realizar%20una%20cotizaci%C3%B3n%20para%20evento" target="_blank" class="cotiza-float" aria-label="Cotiza eventos aquí" title="Cotiza eventos aquí">
-      <i class="fa fa-calendar-alt"></i> Cotiza eventos aquí
-    </a>
-    <a href="https://wa.me/5213311450168" target="_blank" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.instagram.com/tacos_los_azmx" class="instagram" target="_blank" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-  </div>
+  <!-- Botón flotante Cotiza eventos -->
+  <a href="https://wa.me/5213311450168?text=Hola!%20Quisiera%20realizar%20una%20cotizaci%C3%B3n%20para%20evento"
+     target="_blank"
+     class="cotiza-float"
+     aria-label="Cotiza eventos aquí"
+     title="Cotiza eventos aquí">
+     <i class="fa fa-calendar-alt" aria-hidden="true"></i> Cotiza eventos aquí
+  </a>
 
   <!-- Menú -->
   <main>
@@ -94,58 +94,18 @@
     <p>© 2025 Tacos Los AZ</p>
   </footer>
 
-  <!-- Modal info -->
-  <div id="info-modal" class="info-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="info-text">
-    <div class="info-content">
-      <button class="close-btn" onclick="cerrarInfo()" aria-label="Cerrar ventana">&times;</button>
-      <p id="info-text"></p>
-    </div>
+  <!-- Botones flotantes WhatsApp e Instagram -->
+  <div class="floating-btn" aria-label="Botones de contacto rápido">
+    <a href="https://wa.me/5213311450168" target="_blank" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/tacos_los_azmx" class="instagram" target="_blank" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
   </div>
 
   <script>
-    function abrirInfo(tipo) {
-      const infoModal = document.getElementById('info-modal');
-      const texto = {
-        TACOS_BARBACOA: 'Taco de barbacoa exquisito, preparado con receta tradicional jalisciense. Peso total aproximado: 100–140 gramos por taco de barbacoa y 180–250 kcal.',
-        TACOS_BISTEC: 'Taco de bistec jugoso con cebollita y salsa al gusto. Peso total aproximado: 110–150 gramos por taco de bistec y 200–270 kcal.',
-        TACOS_ADOBADA: 'Taco de adobada con piña y especias mexicanas. Peso total aproximado: 100–140 gramos por taco de adobada y 190–260 kcal.',
-        LONCHE_BARBACOA: 'Lonche de barbacoa que se deshace en tu boca. Total aproximado: 220–270 gramos por lonche de barbacoa y 520–650 kcal.',
-        LONCHE_BISTEC: 'Lonche de bistec con pan suave y carne bien sazonada. Total aproximado: 240–290 gramos por lonche de bistec y 540–630 kcal.',
-        LONCHE_ADOBADA: 'Lonche de adobada con el toque perfecto de picante. Total aproximado: 220–270 gramos por lonche de adobada y 520–650 kcal.',
-        AGUA_CHICA: 'Agua fresca de sabores naturales en presentación de medio litro.',
-        AGUA_GRANDE: 'Agua fresca de sabores naturales grande ideal para compartir.',
-        REF_355: 'Refresco frío de 355 ml para acompañar tu comida.',
-        REF_500: 'Refresco frio de 500ml para acompañar tu comida.'
-      };
-      document.getElementById('info-text').textContent = texto[tipo];
-      infoModal.style.display = 'flex';
-      infoModal.setAttribute('aria-hidden', 'false');
+    // Aquí puedes agregar funciones JS para abrir modales u otras interacciones si tienes
+    function abrirInfo(item) {
+      alert("Información detallada de: " + item);
     }
-
-    function cerrarInfo() {
-      const infoModal = document.getElementById('info-modal');
-      infoModal.style.display = 'none';
-      infoModal.setAttribute('aria-hidden', 'true');
-    }
-
-    // Soporte para abrir con Enter o Space (accesibilidad)
-    document.querySelectorAll('.menu-list li').forEach(item => {
-      item.addEventListener('keydown', e => {
-        if(e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          item.click();
-        }
-      });
-    });
-
-    // Navegación activa (highlight menú)
-    const links = document.querySelectorAll('nav ul li a');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        links.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
   </script>
+
 </body>
 </html>
