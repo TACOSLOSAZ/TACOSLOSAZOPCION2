@@ -32,11 +32,14 @@
   </section>
 
   <!-- Botón flotante Cotiza eventos arriba izquierda -->
-  <a href="https://wa.me/5213311450168?text=Hola!%20Quisiera%20realizar%20una%20cotizaci%C3%B3n%20para%20evento" target="_blank" class="cotiza-float" aria-label="Cotiza eventos aquí">
+  <a href="https://wa.me/5213311450168?text=Hola!%20Quisiera%20realizar%20una%20cotizaci%C3%B3n%20para%20evento" 
+     target="_blank" 
+     class="cotiza-float bounce" 
+     aria-label="Cotiza eventos aquí">
     <i class="fa fa-calendar-alt" aria-hidden="true"></i> Cotiza aquí
   </a>
 
-  <!-- Menú -->
+  <!-- Sección Menú -->
   <main>
     <section id="menu" role="region" aria-labelledby="menu-title">
       <h2 id="menu-title" class="section-title">Menú y Precios</h2>
@@ -44,24 +47,24 @@
 
       <h3>Tacos</h3>
       <ul class="menu-list">
-        <li onclick="abrirInfo('TACOS_BARBACOA')" tabindex="0" role="button" aria-pressed="false">Tacos de Barbacoa <span>$19</span></li>
-        <li onclick="abrirInfo('TACOS_BISTEC')" tabindex="0" role="button" aria-pressed="false">Tacos de Bistec <span>$24</span></li>
-        <li onclick="abrirInfo('TACOS_ADOBADA')" tabindex="0" role="button" aria-pressed="false">Tacos de Adobada <span>$22</span></li>
+        <li onclick="abrirInfo('TACOS_BARBACOA')" tabindex="0" role="button">Tacos de Barbacoa <span>$19</span></li>
+        <li onclick="abrirInfo('TACOS_BISTEC')" tabindex="0" role="button">Tacos de Bistec <span>$24</span></li>
+        <li onclick="abrirInfo('TACOS_ADOBADA')" tabindex="0" role="button">Tacos de Adobada <span>$22</span></li>
       </ul>
 
       <h3>Lonches</h3>
       <ul class="menu-list">
-        <li onclick="abrirInfo('LONCHE_BISTEC')" tabindex="0" role="button" aria-pressed="false">Lonche de Bistec <span>$80</span></li>
-        <li onclick="abrirInfo('LONCHE_BARBACOA')" tabindex="0" role="button" aria-pressed="false">Lonche de Barbacoa <span>$70</span></li>
-        <li onclick="abrirInfo('LONCHE_ADOBADA')" tabindex="0" role="button" aria-pressed="false">Lonche de Adobada <span>$70</span></li>
+        <li onclick="abrirInfo('LONCHE_BISTEC')" tabindex="0" role="button">Lonche de Bistec <span>$80</span></li>
+        <li onclick="abrirInfo('LONCHE_BARBACOA')" tabindex="0" role="button">Lonche de Barbacoa <span>$70</span></li>
+        <li onclick="abrirInfo('LONCHE_ADOBADA')" tabindex="0" role="button">Lonche de Adobada <span>$70</span></li>
       </ul>
 
       <h3>Bebidas</h3>
       <ul class="menu-list">
-        <li onclick="abrirInfo('AGUA_CHICA')" tabindex="0" role="button" aria-pressed="false">Agua fresca chica (0.5L) <span>$25</span></li>
-        <li onclick="abrirInfo('AGUA_GRANDE')" tabindex="0" role="button" aria-pressed="false">Agua fresca grande (1L) <span>$30</span></li>
-        <li onclick="abrirInfo('REF_355')" tabindex="0" role="button" aria-pressed="false">Refresco 355 ml <span>$18</span></li>
-        <li onclick="abrirInfo('REF_500')" tabindex="0" role="button" aria-pressed="false">Refresco 500 ml <span>$25</span></li>
+        <li onclick="abrirInfo('AGUA_CHICA')" tabindex="0" role="button">Agua fresca chica (0.5L) <span>$25</span></li>
+        <li onclick="abrirInfo('AGUA_GRANDE')" tabindex="0" role="button">Agua fresca grande (1L) <span>$30</span></li>
+        <li onclick="abrirInfo('REF_355')" tabindex="0" role="button">Refresco 355 ml <span>$18</span></li>
+        <li onclick="abrirInfo('REF_500')" tabindex="0" role="button">Refresco 500 ml <span>$25</span></li>
       </ul>
     </section>
 
@@ -91,6 +94,16 @@
       <h3 id="modalTitle"></h3>
       <p id="modalDesc"></p>
     </div>
+  </div>
+
+  <!-- Botones flotantes de WhatsApp e Instagram -->
+  <div class="floating-btn">
+    <a href="https://wa.me/5213311450168" target="_blank" aria-label="WhatsApp Tacos Los AZ" class="float bounce">
+      <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
+    <a href="https://www.instagram.com/tacos_los_azmx" target="_blank" class="instagram float bounce" aria-label="Instagram Tacos Los AZ">
+      <i class="fab fa-instagram" aria-hidden="true"></i>
+    </a>
   </div>
 
   <script>
@@ -152,7 +165,6 @@
       document.getElementById('infoModal').style.display = 'none';
     }
 
-    // Accesibilidad: cerrar modal con tecla ESC
     window.addEventListener('keydown', e => {
       if (e.key === 'Escape') {
         cerrarInfo();
