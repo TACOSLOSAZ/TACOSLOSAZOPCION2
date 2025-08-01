@@ -80,7 +80,9 @@ nav ul li a:hover {
 #inicio {
   height: 100vh;
   background-color: #a9746e;
-  background-image: repeating-linear-gradient(45deg, #d8c3a5, #d8c3a5 10px, #a9746e 10px, #a9746e 20px);
+  background-image: url('images/wrinkled-paper.jpg');
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
