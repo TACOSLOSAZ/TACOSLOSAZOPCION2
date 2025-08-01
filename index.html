@@ -1,95 +1,106 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tacos Los AZ | Menú</title>
-  <meta name="description" content="Tacos de barbacoa, bistec y adobada directos del corazón de Guadalajara" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tacos Los AZ - Sabor Tradicional</title>
+  <meta name="description" content="Disfruta los mejores tacos de barbacoa, bistec y adobada con sabor auténtico." />
   <meta name="keywords" content="tacos, barbacoa, bistec, adobada, comida mexicana, Guadalajara" />
   <meta name="author" content="Tacos Los AZ" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    /* Aquí va el CSS completo que te pasé arriba si prefieres todo en un solo archivo */
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Sección de Inicio -->
-  <section id="inicio">
+  <!-- Navbar -->
+  <nav role="navigation" aria-label="Menú principal">
+    <div class="logo" tabindex="0">TACOS LOS AZ</div>
+    <ul>
+      <li><a href="#inicio" class="active">Inicio</a></li>
+      <li><a href="#menu">Menú</a></li>
+      <li><a href="#opiniones">Opiniones</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Inicio -->
+  <section id="inicio" role="banner">
     <h1>Tacos Los AZ</h1>
     <p>"Traídos directo del corazón de Guadalajara"</p>
-    <a href="#menu">Ver Menú</a>
+    <a href="#menu" class="btn-primary" aria-label="Ver menú">Ver Menú</a>
   </section>
 
-  <header>
-    <h1>TACOS LOS AZ</h1>
-    <p>Tacos de barbacoa, bistec y adobada directos del corazón de Guadalajara.</p>
-    <div id="google_translate_element"></div>
-  </header>
-
-  <!-- Botón flotante Cotiza eventos -->
-  <a href="https://wa.me/5213311450168?text=Hola!%20Quisiera%20realizar%20una%20cotizaci%C3%B3n%20para%20evento" target="_blank" class="floating-cotiza" title="Cotiza eventos aquí" aria-label="Cotiza eventos aquí">
-    <i class="fa fa-calendar-alt"></i> Cotiza eventos aquí
-  </a>
-
-  <!-- Botones flotantes WhatsApp e Instagram -->
-  <div class="floating-btn">
+  <!-- Botones flotantes -->
+  <div class="floating-btn" aria-label="Botones de contacto rápido" role="region">
+    <a href="https://wa.me/5213311450168?text=Hola!%20Quisiera%20realizar%20una%20cotizaci%C3%B3n%20para%20evento" target="_blank" class="cotiza-float" aria-label="Cotiza eventos aquí" title="Cotiza eventos aquí">
+      <i class="fa fa-calendar-alt"></i> Cotiza eventos aquí
+    </a>
     <a href="https://wa.me/5213311450168" target="_blank" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <a href="https://www.instagram.com/tacos_los_azmx" class="instagram" target="_blank" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
   </div>
 
-  <section id="menu">
-    <h2>Menú y Precios</h2>
-    <p class="horarios">Horario: Sábados y Domingos de 8:00 AM a 2:00 PM</p>
+  <!-- Menú -->
+  <main>
+    <section id="menu" role="region" aria-labelledby="menu-title">
+      <h2 id="menu-title" class="section-title">Menú y Precios</h2>
+      <p class="horarios">Horario: Sábados y Domingos de 8:00 AM a 2:00 PM</p>
 
-    <h3>Tacos</h3>
-    <ul class="menu-list">
-      <li onclick="abrirInfo('TACOS_BARBACOA')">Tacos de Barbacoa <span>$19</span></li>
-      <li onclick="abrirInfo('TACOS_BISTEC')">Tacos de Bistec <span>$24</span></li>
-      <li onclick="abrirInfo('TACOS_ADOBADA')">Tacos de Adobada <span>$22</span></li>
-    </ul>
+      <h3>Tacos</h3>
+      <ul class="menu-list">
+        <li onclick="abrirInfo('TACOS_BARBACOA')" tabindex="0" role="button" aria-pressed="false">Tacos de Barbacoa <span>$19</span></li>
+        <li onclick="abrirInfo('TACOS_BISTEC')" tabindex="0" role="button" aria-pressed="false">Tacos de Bistec <span>$24</span></li>
+        <li onclick="abrirInfo('TACOS_ADOBADA')" tabindex="0" role="button" aria-pressed="false">Tacos de Adobada <span>$22</span></li>
+      </ul>
 
-    <h3>Lonches</h3>
-    <ul class="menu-list">
-      <li onclick="abrirInfo('LONCHE_BISTEC')">Lonche de Bistec <span>$80</span></li>
-      <li onclick="abrirInfo('LONCHE_BARBACOA')">Lonche de Barbacoa <span>$70</span></li>
-      <li onclick="abrirInfo('LONCHE_ADOBADA')">Lonche de Adobada <span>$70</span></li>
-    </ul>
+      <h3>Lonches</h3>
+      <ul class="menu-list">
+        <li onclick="abrirInfo('LONCHE_BISTEC')" tabindex="0" role="button" aria-pressed="false">Lonche de Bistec <span>$80</span></li>
+        <li onclick="abrirInfo('LONCHE_BARBACOA')" tabindex="0" role="button" aria-pressed="false">Lonche de Barbacoa <span>$70</span></li>
+        <li onclick="abrirInfo('LONCHE_ADOBADA')" tabindex="0" role="button" aria-pressed="false">Lonche de Adobada <span>$70</span></li>
+      </ul>
 
-    <h3>Bebidas</h3>
-    <ul class="menu-list">
-      <li onclick="abrirInfo('AGUA_CHICA')">Agua fresca chica (0.5L) <span>$25</span></li>
-      <li onclick="abrirInfo('AGUA_GRANDE')">Agua fresca grande (1L) <span>$30</span></li>
-      <li onclick="abrirInfo('REF_355')">Refresco 355 ml <span>$18</span></li>
-      <li onclick="abrirInfo('REF_500')">Refresco 500 ml <span>$25</span></li>
-    </ul>
-  </section>
+      <h3>Bebidas</h3>
+      <ul class="menu-list">
+        <li onclick="abrirInfo('AGUA_CHICA')" tabindex="0" role="button" aria-pressed="false">Agua fresca chica (0.5L) <span>$25</span></li>
+        <li onclick="abrirInfo('AGUA_GRANDE')" tabindex="0" role="button" aria-pressed="false">Agua fresca grande (1L) <span>$30</span></li>
+        <li onclick="abrirInfo('REF_355')" tabindex="0" role="button" aria-pressed="false">Refresco 355 ml <span>$18</span></li>
+        <li onclick="abrirInfo('REF_500')" tabindex="0" role="button" aria-pressed="false">Refresco 500 ml <span>$25</span></li>
+      </ul>
+    </section>
 
-  <section id="opiniones">
-    <h2>Opiniones de los clientes</h2>
-    <p>¡Déjanos tu opinión en redes sociales o contáctanos!</p>
-  </section>
+    <!-- Opiniones -->
+    <section id="opiniones" role="region" aria-label="Opiniones de clientes">
+      <h2 class="section-title">Opiniones de los clientes</h2>
+      <p>¡Déjanos tu opinión en redes sociales o contáctanos!</p>
+    </section>
 
-  <footer>
+    <!-- Contacto -->
+    <section id="contacto" role="region" aria-labelledby="contacto-title">
+      <h2 id="contacto-title" class="section-title">Contacto</h2>
+      <p>¿Tienes dudas o quieres hacer una cotización? Contáctanos:</p>
+      <ul>
+        <li>Oscar Lomelí</li>
+        <li>Luis Araiza</li>
+        <li>Enrique Sánchez</li>
+      </ul>
+      <p>WhatsApp: <a href="https://wa.me/5213311450168" target="_blank" rel="noopener noreferrer">+52 33 1145 0168</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/tacos_los_azmx" target="_blank" rel="noopener noreferrer">@tacos_los_azmx</a></p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
     <p>© 2025 Tacos Los AZ</p>
-    <p>Contacto por redes sociales</p>
   </footer>
 
-  <!-- Info Modal -->
-  <div id="info-modal" class="info-modal" aria-hidden="true">
+  <!-- Modal info -->
+  <div id="info-modal" class="info-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="info-text">
     <div class="info-content">
-      <span class="close-btn" onclick="cerrarInfo()" aria-label="Cerrar">&times;</span>
+      <button class="close-btn" onclick="cerrarInfo()" aria-label="Cerrar ventana">&times;</button>
       <p id="info-text"></p>
     </div>
   </div>
-
-  <!-- Google Translate -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'es', includedLanguages: 'es,en'}, 'google_translate_element');
-    }
-  </script>
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <script>
     function abrirInfo(tipo) {
@@ -116,6 +127,25 @@
       infoModal.style.display = 'none';
       infoModal.setAttribute('aria-hidden', 'true');
     }
+
+    // Soporte para abrir con Enter o Space (accesibilidad)
+    document.querySelectorAll('.menu-list li').forEach(item => {
+      item.addEventListener('keydown', e => {
+        if(e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          item.click();
+        }
+      });
+    });
+
+    // Navegación activa (highlight menú)
+    const links = document.querySelectorAll('nav ul li a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
   </script>
 </body>
 </html>
