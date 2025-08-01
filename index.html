@@ -2,13 +2,15 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tacos Los AZ | Menú</title>
   <meta name="description" content="Tacos de barbacoa, bistec y adobada directos del corazón de Guadalajara" />
   <meta name="keywords" content="tacos, barbacoa, bistec, adobada, comida mexicana, Guadalajara" />
   <meta name="author" content="Tacos Los AZ" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Aquí va el CSS completo que te pasé arriba si prefieres todo en un solo archivo */
+  </style>
 </head>
 <body>
 
@@ -22,16 +24,16 @@
   <header>
     <h1>TACOS LOS AZ</h1>
     <p>Tacos de barbacoa, bistec y adobada directos del corazón de Guadalajara.</p>
-    <div id="google_translate_element" aria-label="Selector de idioma"></div>
+    <div id="google_translate_element"></div>
   </header>
 
   <!-- Botón flotante Cotiza eventos -->
-  <a href="https://wa.me/5213311450168?text=Hola!%20Quisiera%20cotizar%20un%20evento" target="_blank" class="floating-cotiza" aria-label="Cotiza eventos aquí">
+  <a href="https://wa.me/5213311450168?text=Hola!%20Quisiera%20realizar%20una%20cotizaci%C3%B3n%20para%20evento" target="_blank" class="floating-cotiza" title="Cotiza eventos aquí" aria-label="Cotiza eventos aquí">
     <i class="fa fa-calendar-alt"></i> Cotiza eventos aquí
   </a>
 
   <!-- Botones flotantes WhatsApp e Instagram -->
-  <div class="floating-btn" aria-label="Botones de contacto rápido">
+  <div class="floating-btn">
     <a href="https://wa.me/5213311450168" target="_blank" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <a href="https://www.instagram.com/tacos_los_azmx" class="instagram" target="_blank" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
   </div>
@@ -41,25 +43,25 @@
     <p class="horarios">Horario: Sábados y Domingos de 8:00 AM a 2:00 PM</p>
 
     <h3>Tacos</h3>
-    <ul class="menu-list" role="list" tabindex="0">
-      <li tabindex="0" onclick="abrirInfo('TACOS_BARBACOA')" onkeypress="if(event.key==='Enter'){abrirInfo('TACOS_BARBACOA')}">Tacos de Barbacoa <span>$19</span></li>
-      <li tabindex="0" onclick="abrirInfo('TACOS_BISTEC')" onkeypress="if(event.key==='Enter'){abrirInfo('TACOS_BISTEC')}">Tacos de Bistec <span>$24</span></li>
-      <li tabindex="0" onclick="abrirInfo('TACOS_ADOBADA')" onkeypress="if(event.key==='Enter'){abrirInfo('TACOS_ADOBADA')}">Tacos de Adobada <span>$22</span></li>
+    <ul class="menu-list">
+      <li onclick="abrirInfo('TACOS_BARBACOA')">Tacos de Barbacoa <span>$19</span></li>
+      <li onclick="abrirInfo('TACOS_BISTEC')">Tacos de Bistec <span>$24</span></li>
+      <li onclick="abrirInfo('TACOS_ADOBADA')">Tacos de Adobada <span>$22</span></li>
     </ul>
 
     <h3>Lonches</h3>
-    <ul class="menu-list" role="list" tabindex="0">
-      <li tabindex="0" onclick="abrirInfo('LONCHE_BISTEC')" onkeypress="if(event.key==='Enter'){abrirInfo('LONCHE_BISTEC')}">Lonche de Bistec <span>$80</span></li>
-      <li tabindex="0" onclick="abrirInfo('LONCHE_BARBACOA')" onkeypress="if(event.key==='Enter'){abrirInfo('LONCHE_BARBACOA')}">Lonche de Barbacoa <span>$70</span></li>
-      <li tabindex="0" onclick="abrirInfo('LONCHE_ADOBADA')" onkeypress="if(event.key==='Enter'){abrirInfo('LONCHE_ADOBADA')}">Lonche de Adobada <span>$70</span></li>
+    <ul class="menu-list">
+      <li onclick="abrirInfo('LONCHE_BISTEC')">Lonche de Bistec <span>$80</span></li>
+      <li onclick="abrirInfo('LONCHE_BARBACOA')">Lonche de Barbacoa <span>$70</span></li>
+      <li onclick="abrirInfo('LONCHE_ADOBADA')">Lonche de Adobada <span>$70</span></li>
     </ul>
 
     <h3>Bebidas</h3>
-    <ul class="menu-list" role="list" tabindex="0">
-      <li tabindex="0" onclick="abrirInfo('AGUA_CHICA')" onkeypress="if(event.key==='Enter'){abrirInfo('AGUA_CHICA')}">Agua fresca chica (0.5L) <span>$25</span></li>
-      <li tabindex="0" onclick="abrirInfo('AGUA_GRANDE')" onkeypress="if(event.key==='Enter'){abrirInfo('AGUA_GRANDE')}">Agua fresca grande (1L) <span>$30</span></li>
-      <li tabindex="0" onclick="abrirInfo('REF_355')" onkeypress="if(event.key==='Enter'){abrirInfo('REF_355')}">Refresco 355 ml <span>$18</span></li>
-      <li tabindex="0" onclick="abrirInfo('REF_500')" onkeypress="if(event.key==='Enter'){abrirInfo('REF_500')}">Refresco 500 ml <span>$25</span></li>
+    <ul class="menu-list">
+      <li onclick="abrirInfo('AGUA_CHICA')">Agua fresca chica (0.5L) <span>$25</span></li>
+      <li onclick="abrirInfo('AGUA_GRANDE')">Agua fresca grande (1L) <span>$30</span></li>
+      <li onclick="abrirInfo('REF_355')">Refresco 355 ml <span>$18</span></li>
+      <li onclick="abrirInfo('REF_500')">Refresco 500 ml <span>$25</span></li>
     </ul>
   </section>
 
@@ -74,9 +76,9 @@
   </footer>
 
   <!-- Info Modal -->
-  <div id="info-modal" class="info-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="info-text">
+  <div id="info-modal" class="info-modal" aria-hidden="true">
     <div class="info-content">
-      <button class="close-btn" onclick="cerrarInfo()" aria-label="Cerrar ventana">&times;</button>
+      <span class="close-btn" onclick="cerrarInfo()" aria-label="Cerrar">&times;</span>
       <p id="info-text"></p>
     </div>
   </div>
